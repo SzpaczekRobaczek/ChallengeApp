@@ -2,6 +2,8 @@
 var sex = "Female";
 var age = 50;
 
+Console.WriteLine("Rozwiazanie");
+
 if (sex == "Female" && age > 30)
 {
     Console.WriteLine("Kobieta poniżej 30 lat");
