@@ -1,81 +1,71 @@
-﻿// Tablice
-Console.WriteLine("Tablice");
-Console.WriteLine("");
-int[] grades = new int[365];
+﻿Console.WriteLine("Zadanie domowe dzień 5");
+int number = 4588666;
+Console.WriteLine("Liczba: " + number + " posiada:");
+string numberAsString =  number.ToString();
+char[] letters = numberAsString.ToArray();
 
-string[] dayOfWeeks = new string[7]; // 7 odnosi się to ilości komorek w tabeli, tabela czyna się od 0
-dayOfWeeks[0] = "poniedziałek";
-dayOfWeeks[1] = "wtorek";
-dayOfWeeks[2] = "środa";
-dayOfWeeks[3] = "czwartek";
-dayOfWeeks[4] = "piątek";
-dayOfWeeks[5] = "sobota";
-dayOfWeeks[6] = "niedziela";
-Console.WriteLine(dayOfWeeks[3]);
+int counter0 = 0;
+int counter1 = 0;
+int counter2 = 0;
+int counter3 = 0;
+int counter4 = 0;
+int counter5 = 0;
+int counter6 = 0;
+int counter7 = 0;
+int counter8 = 0;
+int counter9 = 0;
 
-string[] dayOfWeeks2 = { "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota", "niedziela" };
-Console.WriteLine(dayOfWeeks2[5]);
-
-Console.WriteLine("");
-Console.WriteLine("Pętla for");
-Console.WriteLine("");
-// Pętla "for"
-// wartość poczatkowa i=0 - początek pętli zaczyna sie od 0
-// petla rosnie i<=10 - koniec pętli jest na 10
-// pętla rośnie o wartosć i=i+1 albo i++ - pętla wzrasta o podana wartosc w tym przypadku o 1
-for (int i = 0; i <= 10; i = i + 1) // moze tez napisac i++ w ostatnim
+foreach (char letter in letters)
 {
-    Console.WriteLine(i);
+    if (letter == '0')
+    {
+        counter0++;
+    }
+    else if (letter == '1')
+    {
+        counter1++;
+    }
+    else if (letter == '2')
+    {
+        counter2++;
+    }
+    else if (letter == '3')
+    {
+        counter3++;
+    }
+    else if (letter == '4')
+    {
+        counter4++;
+    }
+    else if (letter == '5')
+    {
+        counter5++;
+    }
+    else if (letter == '6')
+    {
+        counter6++;
+    }
+    else if (letter == '7')
+    {
+        counter7++;
+    }
+    else if (letter == '8')
+    {
+        counter8++;
+    }
+    else if (letter == '9')
+    {
+        counter9++;
+    }
 }
-Console.WriteLine("");
-Console.WriteLine("Polaczenie tabeli i pętli");
-Console.WriteLine("");
-// Połączenie tablic i pętli for
-
-for (int i = 0; i < 7; i = i + 2)
-{
-    Console.WriteLine(dayOfWeeks[i]);
-}
-
-for (int i = 0; i < dayOfWeeks.Length; i = i + 1)
-{
-    Console.WriteLine(dayOfWeeks[i]);
-}
-
-Console.WriteLine("");
-Console.WriteLine("Lista");
-Console.WriteLine("");
-// Listy - tabele na "sterydach"
-
-List<string> dayOfWeeks3 = new List<string>();
-dayOfWeeks3.Add("poniedziałek");
-dayOfWeeks3.Add("wtorek");
-dayOfWeeks3.Add("środa");
-dayOfWeeks3.Add("czwartek");
-dayOfWeeks3.Add("piątek");
-dayOfWeeks3.Add("sobota");
-dayOfWeeks3.Add("niedziela");
-
-for (int i = 0; i < dayOfWeeks3.Count; i = i + 1) // "Count" dla List, "Length" dla Tabeli
-{
-    Console.WriteLine(dayOfWeeks3[i]);
-}
-
-Console.WriteLine("");
-Console.WriteLine("Pętla foreacha");
-Console.WriteLine("");
-//Pętla foreach
-
-List<string> dayOfWeeks4 = new List<string>();
-dayOfWeeks4.Add("poniedziałek");
-dayOfWeeks4.Add("wtorek");
-dayOfWeeks4.Add("środa");
-dayOfWeeks4.Add("czwartek");
-dayOfWeeks4.Add("piątek");
-dayOfWeeks4.Add("sobota");
-dayOfWeeks4.Add("niedziela");
-
-foreach(var day in dayOfWeeks4)
-{
-    Console.WriteLine(day);
-}
+Console.WriteLine("0, które występuje: " + counter0);
+Console.WriteLine("1, które występuje: " + counter1);
+Console.WriteLine("2, które występuje: " + counter2);
+Console.WriteLine("3, które występuje: " + counter3);
+Console.WriteLine("4, które występuje: " + counter4);
+Console.WriteLine("5, które występuje: " + counter5);
+Console.WriteLine("6, które występuje: " + counter6);
+Console.WriteLine("7, które występuje: " + counter7);
+Console.WriteLine("8, które występuje: " + counter8);
+Console.WriteLine("9, które występuje: " + counter9);
+Console.WriteLine("Panie docencie mam nadzieję, że dobrze :)");
