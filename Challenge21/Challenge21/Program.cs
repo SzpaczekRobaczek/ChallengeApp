@@ -68,4 +68,4 @@ Console.WriteLine("6, które występuje: " + counter6);
 Console.WriteLine("7, które występuje: " + counter7);
 Console.WriteLine("8, które występuje: " + counter8);
 Console.WriteLine("9, które występuje: " + counter9);
-Console.WriteLine("Panie docencie mam nadzieję, że dobrze :)");
+Console.WriteLine("Panie docencie mam nadzieję, że dobrze");
