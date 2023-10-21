@@ -1,8 +1,8 @@
 ﻿using Challenge21;
 
-Employee employee1 = new Employee("Adam", "Kowalski", "30");
-Employee employee2 = new Employee("Monika", "Lewandowska", "25");
-Employee employee3 = new Employee("Zuzia", "Nowak", "45");
+Employee employee1 = new Employee("Adam", "Kowalski");
+Employee employee2 = new Employee("Monika", "Lewandowska");
+Employee employee3 = new Employee("Zuzia", "Nowak");
 
 employee1.AddScore(5);
 employee1.AddScore(2);
@@ -32,15 +32,15 @@ Console.WriteLine("Osoba z największą liczbą punktów to:");
 
 if (result1 > result2 && result1 > result3)
 {
-    Console.WriteLine(employee1.Name + " " + employee1.Surname + " lat " + employee1.Age + " posiada: " + result1 + "pkt.");
+    Console.WriteLine(employee1.Name + " " + employee1.Surname + " posiada: " + result1 + "pkt.");
 }
 else if (result2 > result1 && result2 > result3)
 {
-    Console.WriteLine(employee2.Name + " " + employee2.Surname + " lat " + employee2.Age + " posiada: " + result2 + "pkt.");
+    Console.WriteLine(employee2.Name + " " + employee2.Surname +  " posiada: " + result2 + "pkt.");
 }
 else if (result3 > result2 && result3 > result1)
 {
-    Console.WriteLine(employee3.Name + " " + employee3.Surname + " lat " + employee3.Age + " posiada: " + result3 + "pkt.");
+    Console.WriteLine(employee3.Name + " " + employee3.Surname + " posiada: " + result3 + "pkt.");
 }
 
 
