@@ -61,25 +61,29 @@ namespace Challenge21
             {
                 case 'A':
                 case 'a':
-                    this.grades.Add(100);
+                    this.AddGrade(100);
                     break;
                 case 'B':
-                    this.grades.Add(80);
+                case 'b':
+                    this.AddGrade(80);
                     break;
                 case 'C':
-                    this.grades.Add(60);
+                case 'c':
+                    this.AddGrade(60);
                     break;
                 case 'D':
-                    this.grades.Add(40);
+                case 'd':
+                    this.AddGrade(40);
                     break;
                 case 'E':
-                    this.grades.Add(20);
+                case 'e':
+                    this.AddGrade(20);
                     break;
                 default:
-                    this.grades.Add(0);
+                    this.AddGrade(0);
                     break;
             }
-        }
+       }
 
         public Statistics GetStatistics()
         {
