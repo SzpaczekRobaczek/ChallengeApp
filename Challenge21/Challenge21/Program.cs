@@ -7,20 +7,22 @@ Console.WriteLine("");
 
 var employee = new Employee();
 
-Console.WriteLine("Podaj pierwszą ocene pracownika:");
-var input = Console.ReadLine();
-
-employee.AddGrade(input);
-
 while (true)
 {
     Console.WriteLine("Podaj kolejną ocene pracownika:");
-    var input2 = Console.ReadLine();
-    if (input2 == "q")
+    var input = Console.ReadLine();
+    if (input == "q")
     {
         break;
     }
-    employee.AddGrade(input2);
+    try
+    {
+        employee.AddGrade(input);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Excepiton catched: {ex.Message}");
+    }
 }
 
 var statistics = employee.GetStatistics();

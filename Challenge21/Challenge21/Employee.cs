@@ -5,6 +5,7 @@ namespace Challenge21
     public class Employee
     {
         private List<float> grades = new List<float>();
+
         public Employee() // konstruktor
         {
         }
@@ -27,7 +28,7 @@ namespace Challenge21
             }
             else
             {
-                Console.WriteLine("invalid grade value");
+                throw new Exception("invalid grade value");
             }
         }
 
@@ -39,8 +40,8 @@ namespace Challenge21
             }
             else
             {
-                Console.WriteLine("String is not float");
-            }
+                throw new Exception("String is not float");
+           }
         }
 
         public void AddGrade(long grade) // rzutowanie
@@ -80,8 +81,7 @@ namespace Challenge21
                     this.AddGrade(20);
                     break;
                 default:
-                    this.AddGrade(0);
-                    break;
+                    throw new Exception("Wrong Letter");
             }
        }
 
