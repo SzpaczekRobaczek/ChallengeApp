@@ -1,24 +1,14 @@
-﻿using System;
-
-namespace Challenge21
+﻿namespace Challenge21
 {
-    public class Employee
+    public class Employee : Person
     {
-        private List<float> grades = new List<float>();
+        private readonly List<float> grades = new List<float>();
 
-        public Employee() // konstruktor
+        public Employee(string name, string surname, char sex) // konstruktor
+            : base (name, surname, sex) 
         {
+
         }
-
-        public Employee(string name, string surname) // konstruktor
-        {
-            this.Name = name;
-            this.Surname = surname;
-        }
-
-        public string Name { get; private set; }
-
-        public string Surname { get; private set; }
 
         public void AddGrade(float grade)
         {
@@ -41,7 +31,7 @@ namespace Challenge21
             else
             {
                 throw new Exception("String is not float");
-           }
+            }
         }
 
         public void AddGrade(long grade) // rzutowanie
@@ -83,7 +73,7 @@ namespace Challenge21
                 default:
                     throw new Exception("Wrong Letter");
             }
-       }
+        }
 
         public Statistics GetStatistics()
         {
