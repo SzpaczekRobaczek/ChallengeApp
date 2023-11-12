@@ -1,15 +1,22 @@
 ﻿namespace Challenge21
 {
-    public class Employee : Person
+    public class Employee : IEmployee
     {
         private readonly List<float> grades = new List<float>();
 
         public Employee(string name, string surname, char sex) // konstruktor
-            : base (name, surname, sex) 
         {
-
+            this.Name = name;
+            this.Surname = surname;
+            this.Sex = sex;
         }
 
+        public string Name { get; private set; }
+
+        public string Surname { get; private set; }
+
+        public char Sex { get; private set; }
+         
         public void AddGrade(float grade)
         {
             if (grade >= 0 && grade <= 100) // walidacja - sprawdzenie zakresu
