@@ -5,33 +5,32 @@ Console.WriteLine("");
 Console.WriteLine("Napisz q jak chcesz zobaczyć statystyki");
 Console.WriteLine("");
 
-var employee = new Employee();
+var employee = new EmployeeInFile("Adam", "Lewandowski", 'M');
+employee.AddGrade("70");
 
-while (true)
-{
-    Console.WriteLine("Podaj kolejną ocene pracownika:");
-    var input = Console.ReadLine();
-    if (input == "q")
-    {
-        break;
-    }
-    try
-    {
-        employee.AddGrade(input);
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"Excepiton catched: {ex.Message}");
-    }
-}
+//while (true)
+//{
+//    Console.WriteLine("Podaj kolejną ocene pracownika:");
+//    var input = Console.ReadLine();
+//    if (input == "q")
+//    {
+//        break;
+//    }
+//    try
+//    {
+//        employee.AddGrade(input);
+//    }
+//    catch (Exception ex)
+//    {
+//        Console.WriteLine($"Excepiton catched: {ex.Message}");
+//    }
+//}
 
-var statistics = employee.GetStatistics();
-Console.WriteLine($"Average: {statistics.Average}");
-Console.WriteLine($"Max: {statistics.Max}");
-Console.WriteLine($"Min: {statistics.Min}");
-Console.WriteLine($"AverageLetter: {statistics.AverageLetter}");
-
-
+//var statistics = employee.GetStatistics();
+//Console.WriteLine($"Average: {statistics.Average}");
+//Console.WriteLine($"Max: {statistics.Max}");
+//Console.WriteLine($"Min: {statistics.Min}");
+//Console.WriteLine($"AverageLetter: {statistics.AverageLetter}");
 
 
 

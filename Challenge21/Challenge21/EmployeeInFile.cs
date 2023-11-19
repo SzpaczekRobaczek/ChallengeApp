@@ -1,27 +1,22 @@
 ﻿namespace Challenge21
 {
-    public class Employee : IEmployee
+    public class EmployeeInFile : EmployeeBase
     {
-        private readonly List<float> grades = new List<float>();
+        private const string fileName = "grades.txt";
 
-        public Employee(string name, string surname, char sex) // konstruktor
+        public EmployeeInFile(string name, string surname, char sex)   // konstruktor
+            : base(name, surname, sex)
         {
-            this.Name = name;
-            this.Surname = surname;
-            this.Sex = sex;
         }
 
-        public string Name { get; private set; }
-
-        public string Surname { get; private set; }
-
-        public char Sex { get; private set; }
-         
-        public void AddGrade(float grade)
+        public override void AddGrade(float grade)
         {
             if (grade >= 0 && grade <= 100) // walidacja - sprawdzenie zakresu
             {
-                this.grades.Add(grade);
+                using (var writer = File.AppendText(fileName))
+                {
+                    writer.WriteLine(grade);
+                }
             }
             else
             {
@@ -29,7 +24,7 @@
             }
         }
 
-        public void AddGrade(string grade) // TryParse tylko dla string 
+        public override void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float result))
             {
@@ -41,19 +36,19 @@
             }
         }
 
-        public void AddGrade(long grade) // rzutowanie
+        public override void AddGrade(long grade)
         {
             float gradeLong = (float)grade;
             this.AddGrade(gradeLong);
         }
 
-        public void AddGrade(double grade)
+        public override void AddGrade(double grade)
         {
             float gradeDouble = (float)grade;
             this.AddGrade(gradeDouble);
         }
 
-        public void AddGrade(char grade)
+        public override void AddGrade(char grade)
         {
             switch (grade)
             {
@@ -82,21 +77,51 @@
             }
         }
 
-        public Statistics GetStatistics()
+        public override Statistics GetStatistics()
+        {
+            var gradesFromFile = this.ReadGradesFromFile();
+            var result = this.CountStatistics(gradesFromFile);
+            return result;
+        }
+
+        private List<float> ReadGradesFromFile() 
+        {
+            var grades = new List<float>();
+            if (File.Exists($"{fileName}"))
+            {
+                using (var reader = File.OpenText($"{fileName}"))
+                {
+                    var line = reader.ReadLine();
+                    while (line != null)
+                    {
+                        var number = float.Parse(line);
+                        grades.Add(number);
+                        line = reader.ReadLine();
+                    }
+                }
+            }
+
+            return grades;
+        }
+
+        private Statistics CountStatistics(List<float> grades)
         {
             var statistics = new Statistics();
             statistics.Average = 0;
             statistics.Max = float.MinValue;
             statistics.Min = float.MaxValue;
 
-            foreach (var grade in this.grades)
+            foreach ( var grade in grades)
             {
-                statistics.Max = Math.Max(statistics.Max, grade);
-                statistics.Min = Math.Min(statistics.Min, grade);
-                statistics.Average += grade;
+                if (grade >= 0)
+                {
+                    statistics.Max = Math.Max(statistics.Max, grade);
+                    statistics.Min = Math.Min(statistics.Min, grade);
+                    statistics.Average += grade;
+                }
             }
 
-            statistics.Average /= this.grades.Count;
+            statistics.Average /= grades.Count;
 
             switch (statistics.Average)
             {
@@ -121,4 +146,3 @@
         }
     }
 }
-
