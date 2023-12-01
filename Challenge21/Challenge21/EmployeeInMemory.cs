@@ -2,6 +2,8 @@
 {
     public class EmployeeInMemory : EmployeeBase
     {
+        public event GradeAddedDeleagate GradeAdded;
+
         private readonly List<float> grades = new List<float>();
 
         public EmployeeInMemory(string name, string surname, char sex) 
@@ -14,6 +16,11 @@
             if (grade >= 0 && grade <= 100) // walidacja - sprawdzenie zakresu
             {
                 this.grades.Add(grade);
+
+                if(GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
             }
             else
             {

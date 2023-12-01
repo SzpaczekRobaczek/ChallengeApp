@@ -2,6 +2,10 @@
 {
     public abstract class EmployeeBase : IEmployee
     {
+        public delegate void GradeAddedDeleagate(object sender, EventArgs args);
+
+        public event GradeAddedDeleagate GradeAdded;
+
         public EmployeeBase(string name, string surname, char sex)
         {
             this.Name = name;

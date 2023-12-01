@@ -4,6 +4,8 @@
     {
         private const string fileName = "grades.txt";
 
+        public event GradeAddedDeleagate GradeAdded;
+
         public EmployeeInFile(string name, string surname, char sex)   // konstruktor
             : base(name, surname, sex)
         {
@@ -16,6 +18,11 @@
                 using (var writer = File.AppendText(fileName))
                 {
                     writer.WriteLine(grade);
+                }
+
+                if (GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
                 }
             }
             else
