@@ -1,4 +1,6 @@
-﻿namespace Challenge21
+﻿using static Challenge21.EmployeeBase;
+
+namespace Challenge21
 {
     public interface IEmployee
     {
@@ -17,6 +19,8 @@
         void AddGrade(double grade);
 
         void AddGrade(char grade);
+
+        event GradeAddedDeleagate GradeAdded;
 
         Statistics GetStatistics();
     }

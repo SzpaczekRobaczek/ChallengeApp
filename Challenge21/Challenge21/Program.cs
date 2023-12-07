@@ -5,7 +5,7 @@ Console.WriteLine("");
 Console.WriteLine("Napisz q jak chcesz zobaczyć statystyki");
 Console.WriteLine("");
 
-var employee = new EmployeeInMemory("Adam", "Lewandowski", 'M');
+var employee = new EmployeeInFile("Adam", "Lewandowski", 'M');
 employee.GradeAdded += EmployeeGradeAdded;
 
 void EmployeeGradeAdded(object sender, EventArgs args)

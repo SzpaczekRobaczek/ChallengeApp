@@ -12,6 +12,8 @@
 
         char IEmployee.Sex => throw new NotImplementedException();
 
+        public event EmployeeBase.GradeAddedDeleagate GradeAdded;
+
         public Statistics GetStatistics()
         {
             return new Statistics();

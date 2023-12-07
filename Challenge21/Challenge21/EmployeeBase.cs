@@ -4,7 +4,7 @@
     {
         public delegate void GradeAddedDeleagate(object sender, EventArgs args);
 
-        public event GradeAddedDeleagate GradeAdded;
+        public abstract event GradeAddedDeleagate GradeAdded;
 
         public EmployeeBase(string name, string surname, char sex)
         {
